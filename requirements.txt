@@ -1,0 +1,12 @@
+# Inferred from server imports; original environment lockfile was not supplied.
+# Validate versions in the target environment before freezing dependencies.
+fastapi
+uvicorn
+python-multipart
+ultralytics
+deepface
+opencv-python
+numpy
+PyMySQL
+requests
+python-dotenv

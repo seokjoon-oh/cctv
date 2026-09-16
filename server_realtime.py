@@ -4,7 +4,7 @@ FastAPI 실시간 침입 감지 서버 (8주차 - threshold 개선 버전)
 - 라즈베리파이로부터 이미지를 POST로 받음
 - YOLO + DeepFace로 등록/미등록 인물 판별
 - MySQL 저장 + Telegram + Email 이중 알림
-- 30초 쿨다운으로 중복 알림 방지
+- 이벤트별 알림 쿨다운 지원 (현재 실험 설정: 0초, 제한 없음)
 - threading 기반 비동기 알림
 - .env 환경변수 분리
 - 등록/미등록 구분을 위해 2단계 threshold 적용
@@ -341,7 +341,7 @@ def compare_face(crops, img_name="unknown", person_idx=1):
 
     판별 기준:
     distance < REGISTER_THRESHOLD       -> Registered
-    REGISTER_THRESHOLD 이상 0.50 미만    -> Unidentified
+    REGISTER_THRESHOLD 이상 UNKNOWN_THRESHOLD 미만    -> Unidentified
     distance >= UNKNOWN_THRESHOLD       -> Unknown
     """
     best = {

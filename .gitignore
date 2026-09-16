@@ -1,0 +1,25 @@
+# Credentials and local configuration
+.env
+.env.*
+*.env
+!.env.example
+
+# Face data and generated images
+registered_faces/
+uploads/
+results/
+*.zip
+*.pt
+
+# Python and tools
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
